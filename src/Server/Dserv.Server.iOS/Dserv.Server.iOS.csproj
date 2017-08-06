@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.props" Condition="Exists('..\..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81BA3299-8674-4083-BE74-407AC5AA154D}</ProjectGuid>
+    <ProjectGuid>{B35A3F6A-200E-4A47-923B-A2CACFC05086}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Dserv.Server.iOS</RootNamespace>
-    <AssemblyName>dserv.Server.iOS</AssemblyName>
+    <RootNamespace>Dserv.Server</RootNamespace>
+    <AssemblyName>Dserv.Server</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -22,11 +23,10 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchProfiling>true</MtouchProfiling>
-    <IOSDebuggerPort>24081</IOSDebuggerPort>
+    <IOSDebuggerPort>33212</IOSDebuggerPort>
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
-    <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchLink></MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,20 +38,23 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DservBuilder.cs" />
+    <Compile Include="EmbeddedResourceHandlerExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dserv.Server\Dserv.Server.csproj">
+      <Project>{E7B015A8-A211-4E98-BC4E-B92214F57825}</Project>
+      <Name>Dserv.Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets" Condition="Exists('..\..\packages\NuGet.Build.Packaging.0.1.324\build\NuGet.Build.Packaging.targets')" />
+  <Import Project="..\..\packages\Microsoft.Packaging.Tools.1.0.0-preview2-25401-01\build\Microsoft.Packaging.Tools.targets" Condition="Exists('..\..\packages\Microsoft.Packaging.Tools.1.0.0-preview2-25401-01\build\Microsoft.Packaging.Tools.targets')" />
 </Project>

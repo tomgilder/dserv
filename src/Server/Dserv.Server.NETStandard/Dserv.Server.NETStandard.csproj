@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Dserv.Server</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.1.276" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dserv.Server\Dserv.Server.csproj" />
+  </ItemGroup>
+</Project>
