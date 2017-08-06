@@ -5,8 +5,8 @@ namespace Dserv.Server
 {
     public interface IHandler
     {
-        //bool CanHandle(HttpListenerRequest request);
+        bool CanHandle(HttpListenerRequest request);
 
-        //Task HandleAsync(HttpListenerContext context);
+        Task HandleAsync(HttpListenerContext context);
     }
 }
