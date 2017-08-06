@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{F50D7666-7DFE-4E77-A33E-12AEE20633F5}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Dserv.Server.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DservBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EmbeddedResourceHandlerExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Host.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MimeTypeMap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EmbeddedResource\EmbeddedResourceHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EmbeddedResource\EmbeddedResourceHandlerIndex.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EmbeddedResource\Resource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\HttpListenerResponseExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringEscapeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\DefaultFallbackHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\HomeHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)EmbeddedResource\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Handlers\" />
+  </ItemGroup>
+</Project>

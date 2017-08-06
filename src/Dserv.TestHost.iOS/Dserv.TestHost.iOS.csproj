@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Server\Dserv.Server.iOS\Dserv.Server.iOS.csproj">
-      <Project>{B35A3F6A-200E-4A47-923B-A2CACFC05086}</Project>
+      <Project>{95008451-BB70-402E-859C-C231DC97FB45}</Project>
       <Name>Dserv.Server.iOS</Name>
     </ProjectReference>
   </ItemGroup>
